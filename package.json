@@ -4,6 +4,7 @@
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "dependencies": {
+    "lodash.template": ">=4.5.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "jovo-db-filedb": "^2.0.2",
