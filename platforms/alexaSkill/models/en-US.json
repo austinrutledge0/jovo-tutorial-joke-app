@@ -1,0 +1,58 @@
+{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "tell me a joke",
+			"types": [],
+			"intents": [
+				{
+					"name": "TellMeAJokeIntent",
+					"samples": [
+						"tell me a joke",
+						"joke",
+						"do a funny"
+					]
+				},
+				{
+					"name": "ThumbsUpIntent",
+					"samples": [
+						"thumbs up",
+						"up"
+					]
+				},
+				{
+					"name": "ThumbsDownIntent",
+					"samples": [
+						"thumbs down",
+						"down"
+					]
+				},
+				{
+					"name": "YesIntent",
+					"samples": [
+						"Yes",
+						"Okay"
+					]
+				},
+				{
+					"name": "NoIntent",
+					"samples": [
+						"Yes",
+						"Okay"
+					]
+				},
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				}
+			]
+		}
+	}
+}

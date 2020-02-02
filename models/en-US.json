@@ -1,0 +1,81 @@
+{
+	"invocation": "tell me a joke",
+	"intents": [
+		{
+			"name": "TellMeAJokeIntent",
+			"phrases": [
+				"tell me a joke",
+				"joke",
+				"do a funny"
+			]
+		},
+		{
+			"name": "ThumbsUpIntent",
+			"phrases": [
+				"thumbs up",
+				"up"
+			]
+		},
+		{
+			"name": "ThumbsDownIntent",
+			"phrases": [
+				"thumbs down",
+				"down"
+			]
+		},
+		{
+			"name": "YesIntent",
+			"phrases": [
+				"Yes",
+				"Okay"
+			]
+		},
+		{
+			"name": "NoIntent",
+			"phrases": [
+				"Yes",
+				"Okay"
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
+}

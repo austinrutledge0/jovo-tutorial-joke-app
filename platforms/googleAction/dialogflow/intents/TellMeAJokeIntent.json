@@ -1,0 +1,5 @@
+{
+	"name": "TellMeAJokeIntent",
+	"auto": true,
+	"webhookUsed": true
+}
