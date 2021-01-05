@@ -4,7 +4,7 @@
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "jovo-db-filedb": "^2.0.2",
     "jovo-framework": "^2.2.30",
