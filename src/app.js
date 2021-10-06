@@ -10,7 +10,6 @@ const { GoogleAssistant } = require("jovo-platform-googleassistant");
 const { JovoDebugger } = require("jovo-plugin-debugger");
 const { FileDb } = require("jovo-db-filedb");
 const axios = require("axios");
-let jokeId = "";
 
 const app = new App();
 
