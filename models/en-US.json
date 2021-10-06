@@ -10,17 +10,9 @@
 			]
 		},
 		{
-			"name": "ThumbsUpIntent",
+			"name": "WouldYouLikeToHearAJokeIntent",
 			"phrases": [
-				"thumbs up",
-				"up"
-			]
-		},
-		{
-			"name": "ThumbsDownIntent",
-			"phrases": [
-				"thumbs down",
-				"down"
+				"would you like to hear a joke?"
 			]
 		},
 		{

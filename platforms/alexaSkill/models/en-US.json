@@ -13,17 +13,9 @@
 					]
 				},
 				{
-					"name": "ThumbsUpIntent",
+					"name": "WouldYouLikeToHearAJokeIntent",
 					"samples": [
-						"thumbs up",
-						"up"
-					]
-				},
-				{
-					"name": "ThumbsDownIntent",
-					"samples": [
-						"thumbs down",
-						"down"
+						"would you like to hear a joke?"
 					]
 				},
 				{
