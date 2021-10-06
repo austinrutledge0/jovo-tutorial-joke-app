@@ -1,5 +1,6 @@
 [
 	{
+		"id": "9779349c-e44c-4f9d-9b68-19c03f13aff2",
 		"data": [
 			{
 				"text": "Yes",
@@ -7,9 +8,11 @@
 			}
 		],
 		"isTemplate": false,
-		"count": 0
+		"count": 0,
+		"lang": "en"
 	},
 	{
+		"id": "93942d08-d19a-4f38-afb3-f10b0c6049e2",
 		"data": [
 			{
 				"text": "Okay",
@@ -17,6 +20,7 @@
 			}
 		],
 		"isTemplate": false,
-		"count": 0
+		"count": 0,
+		"lang": "en"
 	}
 ]

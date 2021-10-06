@@ -22,42 +22,22 @@ app.use(new Alexa(), new GoogleAssistant(), new JovoDebugger(), new FileDb());
 
 app.setHandler({
   LAUNCH() {
-    return this.toStateIntent("StartState", "TellMeAJokeIntent");
+    return this.toIntent("WouldYouLikeToHearAJokeIntent");
   },
-  StartState: {
-    async TellMeAJokeIntent() {
-      const joke = await getJoke();
-      jokeId = joke.id;
-      this.ask(joke.content + " Would you like to rate the joke?");
+    WouldYouLikeToHearAJokeIntent(){
+      this.ask("Would you like to hear a joke?");
     },
     YesIntent() {
-      return this.toStateIntent("RateJokeState", "AskWhichRatingIntent");
+      return this.toIntent("TellMeAJokeIntent");
     },
     NoIntent() {
-      this.tell("Okay, goodbye");
-    }
-  },
-  RateJokeState: {
-    async AskWhichRatingIntent() {
-      this.ask("Would you like to rate the joke as thumbs up or thumbs down?");
+      this.tell("Okay, goodbye!");
     },
-    async ThumbsUpIntent() {
-      const rating = await rateJoke(true, jokeId);
-      if (rating) {
-        this.tell("The joke was rated thumbs up, thank you for your rating");
-      } else {
-        this.tell("The joke could not be rated");
-      }
-    },
-    async ThumbsDownIntent() {
-      const rating = await rateJoke(false, jokeId);
-      if (rating) {
-        this.tell("The joke was rated thumbs down, thank you for your rating");
-      } else {
-        this.tell("The joke could not be rated");
-      }
+    async TellMeAJokeIntent() {
+      const joke = await getJoke();
+      console.log(joke)
+      this.ask(joke.setup + ' ' + joke.delivery + '. Would you like to hear another joke?')
     }
-  }
 });
 
 async function getJoke() {
@@ -68,33 +48,6 @@ async function getJoke() {
   const joke = await axios.get(process.env.API_URL, { headers });
   return joke.data;
 }
-async function rateJoke(isThumbsUp, jokeId) {
-  let headers = {};
-  let rating = "";
 
-  headers = {
-    "x-rapidapi-host": process.env.HOST_URL,
-    "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-    "content-type": "application/x-www-form-urlencoded"
-  };
-  if (isThumbsUp) {
-    rating = await axios.post(
-      `${process.env.API_URL}/${jokeId}/upvote`,
-      {},
-      { headers }
-    );
-  } else {
-    rating = await axios.post(
-      `${process.env.API_URL}/${jokeId}/downvote`,
-      {},
-      { headers }
-    );
-  }
-  if (rating) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 module.exports.app = app;

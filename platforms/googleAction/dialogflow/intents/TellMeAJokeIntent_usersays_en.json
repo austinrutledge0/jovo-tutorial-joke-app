@@ -1,5 +1,6 @@
 [
 	{
+		"id": "13911d5f-69df-44ff-99a8-20a667633739",
 		"data": [
 			{
 				"text": "tell me a joke",
@@ -7,9 +8,11 @@
 			}
 		],
 		"isTemplate": false,
-		"count": 0
+		"count": 0,
+		"lang": "en"
 	},
 	{
+		"id": "b3692b35-8632-42a6-9708-81dee022a078",
 		"data": [
 			{
 				"text": "joke",
@@ -17,9 +20,11 @@
 			}
 		],
 		"isTemplate": false,
-		"count": 0
+		"count": 0,
+		"lang": "en"
 	},
 	{
+		"id": "229df9d1-bbeb-4a28-a589-93ea215ef1ff",
 		"data": [
 			{
 				"text": "do a funny",
@@ -27,6 +32,7 @@
 			}
 		],
 		"isTemplate": false,
-		"count": 0
+		"count": 0,
+		"lang": "en"
 	}
 ]

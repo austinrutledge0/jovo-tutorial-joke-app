@@ -1,4 +1,5 @@
 {
+	"id": "2946b2f0-27f3-48a6-b93f-7cbf48f44fbe",
 	"name": "TellMeAJokeIntent",
 	"auto": true,
 	"webhookUsed": true
