@@ -33,9 +33,20 @@ app.setHandler({
       this.tell("Okay, goodbye!");
     },
     async TellMeAJokeIntent() {
+      const promptForAnotherJoke = ' Would you like to hear another joke?';
       const joke = await getJoke();
-      console.log(joke)
-      this.ask(joke.setup + ' ' + joke.delivery + '. Would you like to hear another joke?')
+      if(joke.type === 'single')
+      {
+        this.ask(`${joke.joke} ${promptForAnotherJoke}`)
+      }
+      else if(joke.type === 'twopart')
+      {  
+        this.ask(`${joke.setup} ${joke.delivery} ${promptForAnotherJoke}`)
+      }
+      else
+      {
+        this.tell('ERROR: The joke API returned malformed data')
+      }
     }
 });
 
@@ -44,7 +55,9 @@ async function getJoke() {
     "x-rapidapi-host": process.env.HOST_URL,
     "x-rapidapi-key": process.env.RAPIDAPI_KEY
   };
-  const joke = await axios.get(process.env.API_URL, { headers });
+  const joke = await axios.get(process.env.API_URL, { headers }).catch(() => {
+    this.tell('ERROR: The joke API returned an error')
+  });
   return joke.data;
 }
 
